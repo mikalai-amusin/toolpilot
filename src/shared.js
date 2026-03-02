@@ -1,6 +1,9 @@
 // ToolPilot — Shared Utilities v2
 // Aurora background, star particles, sharing, favorites, keyboard shortcuts
 
+import { inject } from '@vercel/analytics';
+inject();
+
 // ===== THEME =====
 export function initTheme() {
   const saved = localStorage.getItem('toolpilot-theme');
