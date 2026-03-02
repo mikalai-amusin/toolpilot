@@ -51,7 +51,7 @@ Total bundle size: **~30KB** gzipped.
 
 ```bash
 # Clone
-git clone https://github.com/YOUR_USERNAME/toolpilot.git
+git clone https://github.com/mikalai-amusin/toolpilot.git
 cd toolpilot
 
 # Install

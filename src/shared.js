@@ -96,7 +96,7 @@ function createStarField() {
 }
 
 // ===== CONFIG =====
-const GITHUB_REPO = 'https://github.com/YOUR_USERNAME/toolpilot';
+const GITHUB_REPO = 'https://github.com/mikalai-amusin/toolpilot';
 
 // ===== NAVIGATION =====
 export function getNavHTML(currentPage = '') {
