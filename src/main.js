@@ -12,6 +12,9 @@ const TOOL_MAP = {
   'unit-converter': { name: 'Unit Converter', icon: '📐', color: '#ef4444', gradient: 'var(--gradient-fire)' },
   'qr-generator': { name: 'QR Code Generator', icon: '📱', color: '#7c6aef', gradient: 'var(--gradient-aurora)' },
   'gradient-generator': { name: 'CSS Gradient Generator', icon: '🌈', color: '#f472b6', gradient: 'var(--gradient-sunset)' },
+  'regex-tester': { name: 'Regex Tester', icon: '🔍', color: '#ef4444', gradient: 'var(--gradient-fire)' },
+  'box-shadow': { name: 'Box Shadow Generator', icon: '🖼️', color: '#0ea5e9', gradient: 'var(--gradient-ocean)' },
+  'hash-generator': { name: 'Hash Generator', icon: '🔐', color: '#10b981', gradient: 'var(--gradient-emerald)' },
 };
 
 const tools = [
@@ -24,6 +27,9 @@ const tools = [
   { key: 'markdown-preview', desc: 'Live markdown editor with real-time rendered preview.', tag: null },
   { key: 'base64-codec', desc: 'Encode & decode Base64 strings with Unicode support.', tag: null },
   { key: 'unit-converter', desc: 'Convert length, weight, temperature, speed & data units.', tag: null },
+  { key: 'regex-tester', desc: 'Test regex patterns with live match highlighting & group capture.', tag: 'New' },
+  { key: 'box-shadow', desc: 'Design CSS box shadows visually — multi-layer, presets, live preview.', tag: 'New' },
+  { key: 'hash-generator', desc: 'Generate MD5, SHA-1, SHA-256 & SHA-512 hashes instantly.', tag: 'New' },
   { key: 'lorem-generator', desc: 'Generate placeholder text — paragraphs, sentences, or words.', tag: null },
 ];
 
@@ -66,7 +72,7 @@ document.querySelector('#app').innerHTML = `
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-value">10</div>
+          <div class="hero-stat-value">13</div>
           <div class="hero-stat-label">Free Tools</div>
         </div>
         <div class="hero-stat">
