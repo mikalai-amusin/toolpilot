@@ -152,9 +152,14 @@ export function getFooterHTML() {
 // ===== AD SLOT =====
 export function getAdSlotHTML() {
   return `
-    <div class="ad-slot">
-      <small>Sponsored</small>
-      <p style="margin-top: 0.25rem; font-size: 0.65rem; opacity: 0.6;">Ad space — Google AdSense will be placed here</p>
+    <div class="ad-slot" style="min-height: 90px;">
+      <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-9677637148885128"
+        data-ad-slot="auto"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     </div>
   `;
 }
