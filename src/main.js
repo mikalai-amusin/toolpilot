@@ -15,6 +15,9 @@ const TOOL_MAP = {
   'regex-tester': { name: 'Regex Tester', icon: '🔍', color: '#ef4444', gradient: 'var(--gradient-fire)' },
   'box-shadow': { name: 'Box Shadow Generator', icon: '🖼️', color: '#0ea5e9', gradient: 'var(--gradient-ocean)' },
   'hash-generator': { name: 'Hash Generator', icon: '🔐', color: '#10b981', gradient: 'var(--gradient-emerald)' },
+  'jwt-decoder': { name: 'JWT Decoder', icon: '🎫', color: '#f59e0b', gradient: 'var(--gradient-sunset)' },
+  'timestamp': { name: 'Timestamp Converter', icon: '⏱️', color: '#ef4444', gradient: 'var(--gradient-fire)' },
+  'flexbox': { name: 'CSS Flexbox Playground', icon: '📦', color: '#a855f7', gradient: 'var(--gradient-aurora)' },
 };
 
 const tools = [
@@ -29,7 +32,10 @@ const tools = [
   { key: 'unit-converter', desc: 'Convert length, weight, temperature, speed & data units.', tag: null },
   { key: 'regex-tester', desc: 'Test regex patterns with live match highlighting & group capture.', tag: 'New' },
   { key: 'box-shadow', desc: 'Design CSS box shadows visually — multi-layer, presets, live preview.', tag: 'New' },
-  { key: 'hash-generator', desc: 'Generate MD5, SHA-1, SHA-256 & SHA-512 hashes instantly.', tag: 'New' },
+  { key: 'jwt-decoder', desc: 'Decode JSON Web Tokens — view header, payload, and expiry.', tag: 'New' },
+  { key: 'timestamp', desc: 'Convert Unix timestamps ↔ Dates with timezone support.', tag: 'New' },
+  { key: 'hash-generator', desc: 'Generate MD5, SHA-1, SHA-256 & SHA-512 hashes instantly.', tag: null },
+  { key: 'flexbox', desc: 'Interactive visual playground to learn and test CSS Flexbox.', tag: 'New' },
   { key: 'lorem-generator', desc: 'Generate placeholder text — paragraphs, sentences, or words.', tag: null },
 ];
 
@@ -72,7 +78,7 @@ document.querySelector('#app').innerHTML = `
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
-          <div class="hero-stat-value">13</div>
+          <div class="hero-stat-value">16</div>
           <div class="hero-stat-label">Free Tools</div>
         </div>
         <div class="hero-stat">

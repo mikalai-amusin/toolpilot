@@ -87,6 +87,17 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Color Palette Generator')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>Color Palette Generator</h2>
+      <p>Creating a beautiful UI starts with cohesive colors. A <strong>Color Palette Generator</strong> helps designers and developers construct visually appealing themes based on color theory principles.</p>
+      <h3>Color Harmonies</h3>
+      <ul>
+        <li><strong>Analogous:</strong> Colors next to each other on the color wheel. (Calm, cohesive)</li>
+        <li><strong>Complementary:</strong> Opposite colors on the wheel. (High contrast, vibrant)</li>
+        <li><strong>Triadic:</strong> Three evenly spaced colors. (Balanced but lively)</li>
+        <li><strong>Monochromatic:</strong> Variations in lightness of a single hue.</li>
+      </ul>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

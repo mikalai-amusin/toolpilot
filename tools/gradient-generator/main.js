@@ -2,16 +2,16 @@ import '../../src/styles.css';
 import { getNavHTML, getFooterHTML, initToolPage, copyToClipboard, getShareHTML, getAdSlotHTML } from '../../src/shared.js';
 
 const PRESETS = [
-    { name: 'Aurora', colors: ['#667eea', '#764ba2'], angle: 135 },
-    { name: 'Sunset', colors: ['#f093fb', '#f5576c'], angle: 135 },
-    { name: 'Ocean', colors: ['#0ea5e9', '#6366f1'], angle: 135 },
-    { name: 'Emerald', colors: ['#10b981', '#06b6d4'], angle: 135 },
-    { name: 'Fire', colors: ['#ef4444', '#f97316', '#fbbf24'], angle: 135 },
-    { name: 'Neon', colors: ['#a855f7', '#ec4899'], angle: 135 },
-    { name: 'Midnight', colors: ['#0c0c1d', '#1e1b4b', '#4338ca'], angle: 180 },
-    { name: 'Peach', colors: ['#fbbf24', '#f472b6', '#a855f7'], angle: 135 },
-    { name: 'Ice', colors: ['#e0f2fe', '#7dd3fc', '#0ea5e9'], angle: 180 },
-    { name: 'Forest', colors: ['#064e3b', '#065f46', '#10b981'], angle: 180 },
+  { name: 'Aurora', colors: ['#667eea', '#764ba2'], angle: 135 },
+  { name: 'Sunset', colors: ['#f093fb', '#f5576c'], angle: 135 },
+  { name: 'Ocean', colors: ['#0ea5e9', '#6366f1'], angle: 135 },
+  { name: 'Emerald', colors: ['#10b981', '#06b6d4'], angle: 135 },
+  { name: 'Fire', colors: ['#ef4444', '#f97316', '#fbbf24'], angle: 135 },
+  { name: 'Neon', colors: ['#a855f7', '#ec4899'], angle: 135 },
+  { name: 'Midnight', colors: ['#0c0c1d', '#1e1b4b', '#4338ca'], angle: 180 },
+  { name: 'Peach', colors: ['#fbbf24', '#f472b6', '#a855f7'], angle: 135 },
+  { name: 'Ice', colors: ['#e0f2fe', '#7dd3fc', '#0ea5e9'], angle: 180 },
+  { name: 'Forest', colors: ['#064e3b', '#065f46', '#10b981'], angle: 180 },
 ];
 
 document.querySelector('#app').innerHTML = `
@@ -76,6 +76,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('CSS Gradient Generator')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>CSS Gradient Checkpoint</h2>
+      <p>A <strong>CSS Gradient</strong> allows you to display smooth transitions between two or more specified colors. Gradients add depth, dimension, and modern aesthetics to web interfaces without needing image assets.</p>
+      <h3>Linear vs Radial Gradients</h3>
+      <p><strong>Linear gradients</strong> transition colors along a straight line (e.g., from top to bottom), while <strong>Radial gradients</strong> radiate outward from a central point. This visual generator lets you design both types and instantly copy the cross-browser CSS code.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;
@@ -93,71 +99,71 @@ const color2 = document.getElementById('color2');
 const color3 = document.getElementById('color3');
 
 function updateGradient() {
-    const type = gradType.value;
-    const a = angle.value;
-    const colors = useThreeColors
-        ? [color1.value, color2.value, color3.value]
-        : [color1.value, color2.value];
-    const colorStr = colors.join(', ');
+  const type = gradType.value;
+  const a = angle.value;
+  const colors = useThreeColors
+    ? [color1.value, color2.value, color3.value]
+    : [color1.value, color2.value];
+  const colorStr = colors.join(', ');
 
-    let css;
-    if (type === 'linear') {
-        css = `background: linear-gradient(${a}deg, ${colorStr});`;
-        preview.style.background = `linear-gradient(${a}deg, ${colorStr})`;
-    } else if (type === 'radial') {
-        css = `background: radial-gradient(circle, ${colorStr});`;
-        preview.style.background = `radial-gradient(circle, ${colorStr})`;
-    } else {
-        css = `background: conic-gradient(from ${a}deg, ${colorStr});`;
-        preview.style.background = `conic-gradient(from ${a}deg, ${colorStr})`;
-    }
+  let css;
+  if (type === 'linear') {
+    css = `background: linear-gradient(${a}deg, ${colorStr});`;
+    preview.style.background = `linear-gradient(${a}deg, ${colorStr})`;
+  } else if (type === 'radial') {
+    css = `background: radial-gradient(circle, ${colorStr});`;
+    preview.style.background = `radial-gradient(circle, ${colorStr})`;
+  } else {
+    css = `background: conic-gradient(from ${a}deg, ${colorStr});`;
+    preview.style.background = `conic-gradient(from ${a}deg, ${colorStr})`;
+  }
 
-    cssOutput.textContent = css;
+  cssOutput.textContent = css;
 }
 
 [gradType, angle, color1, color2, color3].forEach(el => {
-    el.addEventListener('input', updateGradient);
+  el.addEventListener('input', updateGradient);
 });
 
 angle.addEventListener('input', (e) => {
-    angleLabel.textContent = e.target.value;
+  angleLabel.textContent = e.target.value;
 });
 
 document.getElementById('addColor').addEventListener('click', () => {
-    useThreeColors = !useThreeColors;
-    color3.disabled = !useThreeColors;
-    color3.style.opacity = useThreeColors ? '1' : '0.3';
-    document.getElementById('addColor').textContent = useThreeColors ? '− Color' : '+ Color';
-    updateGradient();
+  useThreeColors = !useThreeColors;
+  color3.disabled = !useThreeColors;
+  color3.style.opacity = useThreeColors ? '1' : '0.3';
+  document.getElementById('addColor').textContent = useThreeColors ? '− Color' : '+ Color';
+  updateGradient();
 });
 
 document.getElementById('copyBtn').addEventListener('click', () => {
-    copyToClipboard(cssOutput.textContent);
+  copyToClipboard(cssOutput.textContent);
 });
 
 // Presets
 document.querySelectorAll('.preset-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const idx = parseInt(btn.dataset.idx);
-        const p = PRESETS[idx];
-        color1.value = p.colors[0];
-        color2.value = p.colors[1];
-        if (p.colors[2]) {
-            useThreeColors = true;
-            color3.value = p.colors[2];
-            color3.disabled = false;
-            color3.style.opacity = '1';
-            document.getElementById('addColor').textContent = '− Color';
-        } else {
-            useThreeColors = false;
-            color3.disabled = true;
-            color3.style.opacity = '0.3';
-            document.getElementById('addColor').textContent = '+ Color';
-        }
-        angle.value = p.angle;
-        angleLabel.textContent = p.angle;
-        updateGradient();
-    });
+  btn.addEventListener('click', () => {
+    const idx = parseInt(btn.dataset.idx);
+    const p = PRESETS[idx];
+    color1.value = p.colors[0];
+    color2.value = p.colors[1];
+    if (p.colors[2]) {
+      useThreeColors = true;
+      color3.value = p.colors[2];
+      color3.disabled = false;
+      color3.style.opacity = '1';
+      document.getElementById('addColor').textContent = '− Color';
+    } else {
+      useThreeColors = false;
+      color3.disabled = true;
+      color3.style.opacity = '0.3';
+      document.getElementById('addColor').textContent = '+ Color';
+    }
+    angle.value = p.angle;
+    angleLabel.textContent = p.angle;
+    updateGradient();
+  });
 });
 
 updateGradient();

@@ -41,6 +41,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Base64 Encoder')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>What is Base64 Encoding?</h2>
+      <p><strong>Base64</strong> is an encoding scheme used to convert binary data (like images or encrypted keys) into an ASCII string format. This ensures that the data remains intact when transported across channels that only reliably support text, such as email (MIME) or JSON payloads.</p>
+      <h3>Decoding Base64 to Text</h3>
+      <p>Developers frequently need to decode Base64 strings to inspect the underlying data, read email contents, or reverse simple text obfuscation. This tool supports UTF-8 Unicode characters unconditionally.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

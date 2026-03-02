@@ -121,6 +121,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Unit Converter')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>Universal Unit Converter</h2>
+      <p>Whether you are following an international recipe, planning a road trip abroad, or calculating server storage sizes, a <strong>Unit Converter</strong> is indispensable.</p>
+      <h3>Supported Conversion Metrics</h3>
+      <p>This tool instantly converts metric, imperial, and digital units including Length (meters to feet), Weight (kilograms to pounds), Temperature (Celsius to Fahrenheit), Speed (km/h to mph), and Data (Megabytes to Gigabytes).</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

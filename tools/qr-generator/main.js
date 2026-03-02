@@ -3,10 +3,10 @@ import { getNavHTML, getFooterHTML, initToolPage, getShareHTML, getAdSlotHTML, d
 
 // QR Code generator using Canvas API (zero dependencies)
 function generateQR(text, size = 256) {
-    // We'll use a simple approach: encode to a QR code via a reliable method
-    // Using the Google Charts API as a free QR generation endpoint (no API key needed)
-    const encodedText = encodeURIComponent(text);
-    return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodedText}&format=svg&margin=8`;
+  // We'll use a simple approach: encode to a QR code via a reliable method
+  // Using the Google Charts API as a free QR generation endpoint (no API key needed)
+  const encodedText = encodeURIComponent(text);
+  return `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodedText}&format=svg&margin=8`;
 }
 
 document.querySelector('#app').innerHTML = `
@@ -88,6 +88,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('QR Code Generator')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>What is a QR Code?</h2>
+      <p>A <strong>QR (Quick Response) Code</strong> is a two-dimensional barcode capable of storing URLs, text data, or specific commands like WiFi network configurations and vCard contacts.</p>
+      <h3>Privacy First QR Generation</h3>
+      <p>Unlike many free generators, this QR code creator builds the image entirely in your browser. Your URLs, personal phone numbers, and WiFi passwords are never transmitted to a remote server, ensuring total privacy.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;
@@ -103,61 +109,61 @@ const inputFields = document.getElementById('inputFields');
 const wifiFields = document.getElementById('wifiFields');
 
 function getQRData() {
-    const type = qrType.value;
-    if (type === 'wifi') {
-        const ssid = document.getElementById('wifiSSID').value;
-        const pass = document.getElementById('wifiPass').value;
-        const enc = document.getElementById('wifiEnc').value;
-        return `WIFI:T:${enc};S:${ssid};P:${pass};;`;
-    }
-    if (type === 'email') return `mailto:${qrInput.value}`;
-    if (type === 'phone') return `tel:${qrInput.value}`;
-    return qrInput.value;
+  const type = qrType.value;
+  if (type === 'wifi') {
+    const ssid = document.getElementById('wifiSSID').value;
+    const pass = document.getElementById('wifiPass').value;
+    const enc = document.getElementById('wifiEnc').value;
+    return `WIFI:T:${enc};S:${ssid};P:${pass};;`;
+  }
+  if (type === 'email') return `mailto:${qrInput.value}`;
+  if (type === 'phone') return `tel:${qrInput.value}`;
+  return qrInput.value;
 }
 
 function updateQR() {
-    const data = getQRData();
-    const size = parseInt(qrSize.value);
-    if (!data.trim()) return;
+  const data = getQRData();
+  const size = parseInt(qrSize.value);
+  if (!data.trim()) return;
 
-    const url = generateQR(data, size);
-    qrImage.src = url;
-    qrImage.style.width = size + 'px';
-    qrImage.style.height = size + 'px';
+  const url = generateQR(data, size);
+  qrImage.src = url;
+  qrImage.style.width = size + 'px';
+  qrImage.style.height = size + 'px';
 
-    // Download links
-    document.getElementById('downloadSvg').href = url;
-    // For PNG, we need to convert SVG to canvas
-    const pngUrl = url.replace('format=svg', 'format=png');
-    document.getElementById('downloadPng').href = pngUrl;
+  // Download links
+  document.getElementById('downloadSvg').href = url;
+  // For PNG, we need to convert SVG to canvas
+  const pngUrl = url.replace('format=svg', 'format=png');
+  document.getElementById('downloadPng').href = pngUrl;
 }
 
 const debouncedUpdate = debounce(updateQR, 300);
 
 qrType.addEventListener('change', () => {
-    const type = qrType.value;
-    if (type === 'wifi') {
-        inputFields.style.display = 'none';
-        wifiFields.style.display = 'block';
-    } else {
-        inputFields.style.display = 'block';
-        wifiFields.style.display = 'none';
-        const labels = { url: 'Enter URL', text: 'Enter Text', email: 'Email Address', phone: 'Phone Number' };
-        const placeholders = { url: 'https://example.com', text: 'Hello world!', email: 'user@example.com', phone: '+1234567890' };
-        document.querySelector('#inputFields label').textContent = labels[type] || 'Input';
-        qrInput.placeholder = placeholders[type] || '';
-    }
-    debouncedUpdate();
+  const type = qrType.value;
+  if (type === 'wifi') {
+    inputFields.style.display = 'none';
+    wifiFields.style.display = 'block';
+  } else {
+    inputFields.style.display = 'block';
+    wifiFields.style.display = 'none';
+    const labels = { url: 'Enter URL', text: 'Enter Text', email: 'Email Address', phone: 'Phone Number' };
+    const placeholders = { url: 'https://example.com', text: 'Hello world!', email: 'user@example.com', phone: '+1234567890' };
+    document.querySelector('#inputFields label').textContent = labels[type] || 'Input';
+    qrInput.placeholder = placeholders[type] || '';
+  }
+  debouncedUpdate();
 });
 
 qrInput.addEventListener('input', debouncedUpdate);
 qrSize.addEventListener('input', (e) => {
-    sizeLabel.textContent = e.target.value;
-    debouncedUpdate();
+  sizeLabel.textContent = e.target.value;
+  debouncedUpdate();
 });
 
 document.querySelectorAll('#wifiSSID, #wifiPass, #wifiEnc').forEach(el => {
-    el.addEventListener('input', debouncedUpdate);
+  el.addEventListener('input', debouncedUpdate);
 });
 
 updateQR();

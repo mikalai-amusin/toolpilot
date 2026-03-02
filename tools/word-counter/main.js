@@ -50,6 +50,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Word Counter')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>Why use a Word Counter?</h2>
+      <p>A <strong>Word Counter</strong> is essential for writers, SEO professionals, students, and social media managers who need to meet strict length requirements or optimize their content.</p>
+      <h3>Keyword Density Analysis</h3>
+      <p>Besides counting words and characters, this tool analyzes <strong>keyword density</strong> — the percentage of times a word or phrase appears in your text. This helps SEO writers ensure they are targeting the right terms without over-optimizing (keyword stuffing).</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

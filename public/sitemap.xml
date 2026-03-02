@@ -14,4 +14,7 @@
   <url><loc>https://toolpilot-mu.vercel.app/tools/regex-tester/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://toolpilot-mu.vercel.app/tools/box-shadow/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
   <url><loc>https://toolpilot-mu.vercel.app/tools/hash-generator/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot-mu.vercel.app/tools/jwt-decoder/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot-mu.vercel.app/tools/timestamp/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot-mu.vercel.app/tools/flexbox/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
 </urlset>

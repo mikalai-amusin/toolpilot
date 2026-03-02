@@ -58,6 +58,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Lorem Ipsum Generator')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>What is Lorem Ipsum?</h2>
+      <p><strong>Lorem Ipsum</strong> is dummy text used by the design and typesetting industry. It acts as a placeholder to demonstrate the visual form of a document or webpage without relying on meaningful content.</p>
+      <h3>Why use placeholder text?</h3>
+      <p>Using real text during the design phase can distract reviewers. Lorem Ipsum has a relatively normal distribution of letters, making it look like readable English, allowing clients to focus on the typography and layout rather than the words themselves.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

@@ -79,6 +79,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Password Generator')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>How to generate secure passwords?</h2>
+      <p>A secure password should be at least 16 characters long, unique for every account, and impossible to guess. Humans are notoriously bad at creating random passwords, often relying on predictable patterns.</p>
+      <h3>Is this Password Generator safe?</h3>
+      <p>Yes. This tool runs entirely in your browser using the <strong>Web Crypto API</strong> (specifically <code>crypto.getRandomValues()</code>), which provides true cryptographic randomness. No passwords are ever sent over the internet or saved to a server.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

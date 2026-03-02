@@ -113,6 +113,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('Markdown Preview')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>What is Markdown?</h2>
+      <p><strong>Markdown</strong> is a lightweight markup language with plain-text formatting syntax. It was designed to allow writers to structure text using simple symbols (like asterisks and hashes) without needing to write HTML.</p>
+      <h3>Why use a Live Markdown Editor?</h3>
+      <p>A side-by-side markdown editor lets you type syntax on the left and instantly see the rendered HTML output on the right. This is highly useful for writing GitHub READMEs, dev.to blog posts, or Hashnode articles.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 `;

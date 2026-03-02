@@ -62,6 +62,12 @@ document.querySelector('#app').innerHTML = `
 
     ${getShareHTML('JSON Formatter')}
     ${getAdSlotHTML()}
+    <section class="seo-content glass-card" style="margin-top: 2rem;">
+      <h2>What is a JSON Formatter?</h2>
+      <p>A <strong>JSON Formatter</strong> (or JSON Beautifier) is a developer tool that takes minified or unreadable JSON data and formats it with proper indentation, line breaks, and whitespace.</p>
+      <h3>Why format JSON?</h3>
+      <p>When APIs respond with JSON, it is typically minified to save bandwidth. This makes it impossible for humans to read and debug. A JSON formatter instantly restructures the data so you can inspect keys, values, and nested arrays easily.</p>
+    </section>
   </main>
   ${getFooterHTML()}
 
