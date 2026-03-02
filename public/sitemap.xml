@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://toolpilot.app/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/json-formatter/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/word-counter/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/color-palette/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/password-generator/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/qr-generator/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/gradient-generator/</loc><priority>0.9</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/markdown-preview/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/base64-codec/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/unit-converter/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://toolpilot.app/tools/lorem-generator/</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+</urlset>
